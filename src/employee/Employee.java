@@ -16,11 +16,29 @@ public abstract class Employee {
         this.DateOfEmployment = DateOfEmployment;
     }
 
+<<<<<<< HEAD
     public abstract double getSalariedCoefficient();
     public abstract double calculateSalary();
 
     public int getID() {
         return ID;
+=======
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public double getSalariedCoefficient() {
+        double SalariedCoefficient = 0;
+        return SalariedCoefficient;
+    }
+
+    public double calculateSalary() {
+        return 0;
+>>>>>>> f2365d383238852c9edbedd97a614b4be062217f
     }
 }
 

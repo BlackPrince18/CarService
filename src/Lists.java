@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 import car.Bus;
 import car.Car;
 import car.StandardCar;
 import car.Truck;
+=======
+>>>>>>> f2365d383238852c9edbedd97a614b4be062217f
 import employee.Assistant;
 import employee.Director;
 import employee.Employee;
@@ -13,7 +16,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public final class Lists {
+<<<<<<< HEAD
     public static List<Employee> initializeEmployeeList() {
+=======
+    public static List<Employee> initializeList() {
+>>>>>>> f2365d383238852c9edbedd97a614b4be062217f
         List<Employee> employees = new ArrayList<>();
 
         var director = new Director(0, "Purcaru", "Mihnea",
@@ -33,6 +40,7 @@ public final class Lists {
         return employees;
     }
 
+<<<<<<< HEAD
     public static List<Car> initializeCarList() {
         List<Car> cars = new ArrayList<>();
 
@@ -48,10 +56,14 @@ public final class Lists {
     }
 
     public static void addNewEmployee(List<Employee> employees) {
+=======
+    public static List<Employee> addNewEmployee(List<Employee> employees) {
+>>>>>>> f2365d383238852c9edbedd97a614b4be062217f
         var scanner = new Scanner(System.in);
         boolean verify = false;
         String option = "";
 
+<<<<<<< HEAD
         while (!verify) {
             System.out.println("What do you want to add? (D/M/A)");
             option = scanner.nextLine();
@@ -73,6 +85,17 @@ public final class Lists {
         }
 
         Menu.enterCarCredentials(cars, option);
+=======
+        while (verify != true) {
+            System.out.println("What do you want to add? (D/M/A)");
+            option = scanner.nextLine();
+            verify = Menu.verifyOption(option);
+        }
+                
+        Menu.enterCredentials(employees, option);
+
+        return employees;
+>>>>>>> f2365d383238852c9edbedd97a614b4be062217f
     }
 
     public static void removeEmployee(List<Employee> employees) {
@@ -81,6 +104,7 @@ public final class Lists {
             return;
         }
 
+<<<<<<< HEAD
         var ID = enterEmployeeID(employees);
         employees.remove(ID);
     }
@@ -95,23 +119,38 @@ public final class Lists {
         cars.remove(ID);
     }
 
+=======
+        var ID = enterID(employees);
+        employees.remove(ID);
+    }
+
+>>>>>>> f2365d383238852c9edbedd97a614b4be062217f
     public static void editEmployee(List<Employee> employees) {
         if (employees.isEmpty()) {
             System.out.println("The Employee list is empty!");
             return;
         }
 
+<<<<<<< HEAD
         var ID = enterEmployeeID(employees);
 
         for (int i=0; i < employees.size(); i++) {
             if(employees.get(i).getID() == ID) {
                 Employee employee = Menu.replaceEmployeeCredentials(employees.get(i));
+=======
+        var ID = enterID(employees);
+
+        for (int i=0; i < employees.size(); i++) {
+            if(employees.get(i).getID() == ID) {
+                Employee employee = Menu.replaceCredentials(employees.get(i));
+>>>>>>> f2365d383238852c9edbedd97a614b4be062217f
                 employees.set(i, employee);
                 break;
             }
         }
     }
 
+<<<<<<< HEAD
     public static void editCar(List<Car> cars) {
         if (cars.isEmpty()) {
             System.out.println("The Employee list is empty!");
@@ -134,11 +173,19 @@ public final class Lists {
         for (Employee employee : employees) {
             if (employee.getID() == ID) {
                 System.out.println(employee.calculateSalary());
+=======
+    public static void showSalary(List<Employee> employees) {
+        var ID = enterID(employees);
+        for (int i=0; i<employees.size(); i++) {
+            if(employees.get(i).getID() == ID) {
+                System.out.println(employees.get(i).calculateSalary());
+>>>>>>> f2365d383238852c9edbedd97a614b4be062217f
                 break;
             }
         }
     }
 
+<<<<<<< HEAD
     public static double calculateInsurance(List<Car> cars) {
         if (cars.isEmpty()) {
             System.out.println("The Car list is empty!");
@@ -180,10 +227,16 @@ public final class Lists {
     private static boolean containsEmployeeID(List<Employee> employees, int ID) {
         for (Employee employee : employees)
             if (employee.getID() == ID) return true;
+=======
+    private static boolean containsID(List<Employee> employees, int ID) {
+        for (int i=0; i<employees.size(); i++)
+            if (employees.get(i).getID() == ID) return true;
+>>>>>>> f2365d383238852c9edbedd97a614b4be062217f
 
         return false;
     }
 
+<<<<<<< HEAD
     private static boolean containsCarID(List<Car> cars, int ID) {
         for (Car car : cars)
             if (car.getID() == ID) return true;
@@ -192,12 +245,16 @@ public final class Lists {
     }
 
     private static int enterEmployeeID(List<Employee> employees) {
+=======
+    private static int enterID(List<Employee> employees) {
+>>>>>>> f2365d383238852c9edbedd97a614b4be062217f
         int ID = 0;
         boolean verify = false;
         var scanner = new Scanner(System.in);
 
 
         while (!verify) {
+<<<<<<< HEAD
             System.out.print("Type the ID of the employee: ");
             ID = scanner.nextInt();
             verify = Lists.containsEmployeeID(employees, ID);
@@ -216,6 +273,11 @@ public final class Lists {
             System.out.print("Type the ID of the car: ");
             ID = scanner.nextInt();
             verify = Lists.containsCarID(cars, ID);
+=======
+            System.out.println("Which employee do you want to edit (ID) ? ");
+            ID = scanner.nextInt();
+            verify = Lists.containsID(employees, ID);
+>>>>>>> f2365d383238852c9edbedd97a614b4be062217f
             if (!verify) System.out.println("The ID does not exists!");
         }
 
