@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 import car.Bus;
 import car.Car;
 import car.StandardCar;
 import car.Truck;
-=======
->>>>>>> f2365d383238852c9edbedd97a614b4be062217f
 import employee.Assistant;
 import employee.Director;
 import employee.Employee;
@@ -13,27 +10,18 @@ import employee.Mechanic;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
-<<<<<<< HEAD
-=======
-import java.util.Objects;
->>>>>>> f2365d383238852c9edbedd97a614b4be062217f
 import java.util.Scanner;
 
 public class Menu {
     public static void show() {
         System.out.println("\t\t\t\tCar Service");
         System.out.println("1. Employees");
-<<<<<<< HEAD
         System.out.println("2. Cars");
-=======
-        System.out.println("2. Vehicles");
->>>>>>> f2365d383238852c9edbedd97a614b4be062217f
         System.out.println("3. Service Activity");
         System.out.println("4. Report");
         System.out.println("5. Exit");
     }
 
-<<<<<<< HEAD
     private static void showEmployeeMenu() {
         System.out.println();
         System.out.println("\t\t\t\tEmployees");
@@ -62,13 +50,6 @@ public class Menu {
 
         while (choice2 != 6) {
             showEmployeeMenu();
-=======
-    public static void firstChoice(List<Employee> employees, int choice2) {
-        Scanner scanner = new Scanner(System.in);
-
-        while (choice2 != 6) {
-            Menu.showEmployeeMenu();
->>>>>>> f2365d383238852c9edbedd97a614b4be062217f
             choice2 = scanner.nextInt();
             switch (choice2) {
                 case 1:
@@ -95,7 +76,6 @@ public class Menu {
         } System.out.println();
     }
 
-<<<<<<< HEAD
     public static void secondChoice(List<Car> cars) {
         var scanner = new Scanner(System.in);
         int choice2 = 0;
@@ -129,20 +109,6 @@ public class Menu {
     }
 
     public static void enterEmployeeCredentials(List<Employee> employees, String option) {
-=======
-    private static void showEmployeeMenu() {
-        System.out.println();
-        System.out.println("\t\t\t\tEmployees");
-        System.out.println("1. Show Employees");
-        System.out.println("2. Add Employee");
-        System.out.println("3. Remove Employee");
-        System.out.println("4. Edit Employee");
-        System.out.println("5. Calculate Salary");
-        System.out.println("6. Exit");
-    }
-
-    public static void enterCredentials(List<Employee> employees, String option) {
->>>>>>> f2365d383238852c9edbedd97a614b4be062217f
         int ID = employees.getLast().getID()+1;
         System.out.print("First Name: ");
         String FirstName = "";
@@ -165,7 +131,6 @@ public class Menu {
         employees.add(newEmployee);
     }
 
-<<<<<<< HEAD
     public static void enterCarCredentials(List<Car> cars, String option) {
         int ID = cars.getLast().getID()+1;
         int odometer = enterOdometer();
@@ -188,9 +153,6 @@ public class Menu {
     }
 
     public static Employee replaceEmployeeCredentials(Employee employee) {
-=======
-    public static Employee replaceCredentials(Employee employee) {
->>>>>>> f2365d383238852c9edbedd97a614b4be062217f
         int ID = employee.getID();
         System.out.print("First Name: ");
         String FirstName = "";
@@ -213,7 +175,6 @@ public class Menu {
         return result;
     }
 
-<<<<<<< HEAD
     public static Car replaceCarCredentials(Car car) {
        int ID = car.getID();
        int odometer = enterOdometer();
@@ -237,8 +198,6 @@ public class Menu {
         return result;
     }
 
-=======
->>>>>>> f2365d383238852c9edbedd97a614b4be062217f
     private static String enterName(String Name) {
         var scanner = new Scanner(System.in);
         boolean verify = false;
@@ -299,7 +258,6 @@ public class Menu {
         return LocalDate.of(year, month, day);
     }
 
-<<<<<<< HEAD
     private static int enterOdometer() {
         int odometer = 0;
         boolean verify = false;
@@ -398,18 +356,12 @@ public class Menu {
         return weight;
     }
 
-=======
->>>>>>> f2365d383238852c9edbedd97a614b4be062217f
     private static boolean verifyBirthday(LocalDate start, LocalDate end) {
         if (Period.between(start, end).getYears() < 18) return false;
         else if (Period.between(start, end).getYears() == 18) {
             if (Period.between(start, end).getMonths() < 0) return false;
             else if (Period.between(start, end).getMonths() == 0) {
-<<<<<<< HEAD
                 return Period.between(start, end).getDays() >= 0;
-=======
-                if (Period.between(start, end).getDays() < 0) return false;
->>>>>>> f2365d383238852c9edbedd97a614b4be062217f
             }
         }
 
@@ -417,18 +369,10 @@ public class Menu {
     }
 
     private static boolean verifyDateOfEmployment(LocalDate DateOfEmployment, LocalDate today) {
-<<<<<<< HEAD
         return !DateOfEmployment.isAfter(today);
     }
 
     public static boolean verifyEmployeeOption(String option) {
-=======
-        if (DateOfEmployment.isAfter(today)) return false;
-        else return true;
-    }
-
-    public static boolean verifyOption(String option) {
->>>>>>> f2365d383238852c9edbedd97a614b4be062217f
         if (!option.equals("d") && !option.equals("D"))
             if (!option.equals("m") && !option.equals("M"))
                 if (!option.equals("a") && !option.equals("A")) {
@@ -438,7 +382,6 @@ public class Menu {
 
         return true;
     }
-<<<<<<< HEAD
 
     public static boolean verifyCarOption(String option) {
         if (!option.equals("SC") && !option.equals("sc"))
@@ -450,6 +393,4 @@ public class Menu {
 
         return true;
     }
-=======
->>>>>>> f2365d383238852c9edbedd97a614b4be062217f
 }
